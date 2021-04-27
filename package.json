@@ -3,8 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng s –o --port 4200",
     "build": "ng build",
+    "build:dev": "ng build --output-path ./docs --watch --base-href=/my-app --deploy-url=/static/",
+    "build:pro": "ng build --output-path ./docs --prod --base-href=/my-app --deploy-url=/static/",
+    "build:pro2": "ng build --output-path ../src/main/resources/angular --prod --base-href=/my-app --deploy-url=/static/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
