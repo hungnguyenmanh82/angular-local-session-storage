@@ -1,0 +1,49 @@
+<div class="container">
+  <h2>local-storage.component:</h2>
+
+  <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage"
+    >https://developer.mozilla.org/en-US/docs/Web/API/Storage</a
+  >
+  <p>
+    window.localStorage: là biến global luôn ở TypeScript.
+    <br />
+    + bản chất là 1 HashMap => dùng giống vậy, chỉ khác tên method
+    <br />
+    + window.localStorage: Browser hỗ trợ lưu data cho 1 domain ở local
+    <br />
+    + các window tab của cùng 1 domain đều read/write đc vào localStorage
+    <br />
+    + domain khác ko thể truy cập đc => xem ở cookies của browser sẽ thấy
+    <br />
+    + khi reload URL thì window.localStorage và window.sessionStorage ko bị xóa
+    (tested)
+  </p>
+  <p>
+    + xóa window.localStorage ở Browser cookies
+    <br />
+    + mở browser tab khác để xem kết quả
+    <br />
+    + reload URL trên window tab address bar để xem kết quả
+    <br />
+    + test với Browser khác (chrome, edge, firefox)
+  </p>
+
+  <h3>localStorage.length = {{ store.length }}</h3>
+  <h3>localStorage.keys = {{ keys | json }}</h3>
+
+  <h3 *ngIf="key1 == null">key1 = null</h3>
+
+  <h3 *ngIf="key1 != null">key1 = {{ key1 }}</h3>
+
+  <button (click)="onSetItem()">localStorage.setItem(key, value)</button>
+
+  <button (click)="onGetItem()">localStorage.getItem(key)</button>
+
+  <button (click)="onRemoveItem()">localStorage.removeItem(key)</button>
+
+  <div>
+    <button (click)="onSetItem2()">add key2,key3, key4</button>
+    <button (click)="onGetKeys()">localStorage.key(n)</button>
+    <button (click)="onClear()">localStorage.clear()</button>
+  </div>
+</div>
