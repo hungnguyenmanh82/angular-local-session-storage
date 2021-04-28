@@ -17,6 +17,15 @@
     <br />
     + khi reload URL thì window.localStorage và window.sessionStorage ko bị xóa
     (tested)
+    <br />
+    + localStorage chỉ lưu value = string. Muốn lưu các thứ phải convert sang
+    Json string. JSON.stringify(object)
+  </p>
+  <p style="color: blue">
+    + localStorage cho phep trigger event tới window tab khác khi có thay đổi .
+    (ko trigger event cùng window tab)
+    <br />
+    + sessionStorage trên 1 window tab nên ko cần trigger event.
   </p>
   <p>
     + xóa window.localStorage ở Browser cookies
@@ -46,4 +55,6 @@
     <button (click)="onGetKeys()">localStorage.key(n)</button>
     <button (click)="onClear()">localStorage.clear()</button>
   </div>
+
+  <p></p>
 </div>

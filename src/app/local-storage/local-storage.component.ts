@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./local-storage.component.scss'],
 })
 export class LocalStorageComponent implements OnInit {
-  constructor() {}
-
   key1: string = '';
 
   store: any;
@@ -34,6 +32,15 @@ export class LocalStorageComponent implements OnInit {
      */
 
     this.showAll();
+
+    /**
+     * Nếu có nhiều Event đến thì chỉ Event thực hiện
+     */
+    window.addEventListener('storage', () => {
+      alert('window.localStorage change in other window tab');
+    });
+
+    
   }
 
   index: number = 1;
